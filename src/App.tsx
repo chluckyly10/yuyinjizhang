@@ -8,6 +8,8 @@ import Reports from "@/pages/Reports";
 import Budget from "@/pages/Budget";
 import Profile from "@/pages/Profile";
 
+const basename = '/yuyinjizhang';
+
 function AppContent() {
   const navigate = useNavigate();
   
@@ -51,7 +53,7 @@ function App() {
   }
   
   return (
-    <Router>
+    <Router basename={basename}>
       <AppContent />
     </Router>
   );
