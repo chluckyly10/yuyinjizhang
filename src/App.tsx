@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import Login from "@/pages/Login";
 import Home from "@/pages/Home";
 import VoiceRecord from "@/pages/VoiceRecord";
@@ -7,8 +7,6 @@ import Records from "@/pages/Records";
 import Reports from "@/pages/Reports";
 import Budget from "@/pages/Budget";
 import Profile from "@/pages/Profile";
-
-const basename = import.meta.env.NODE_ENV === 'production' ? '/yuyinjizhang' : '';
 
 function AppContent() {
   const navigate = useNavigate();
@@ -53,7 +51,7 @@ function App() {
   }
   
   return (
-    <Router basename={basename}>
+    <Router>
       <AppContent />
     </Router>
   );
