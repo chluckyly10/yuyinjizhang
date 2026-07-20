@@ -24,16 +24,15 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
-          # cache: npm 会读取.lock文件
+          node-version: 24
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v4.1.0
         with:
-          version: latest
+          version: 8.15.0
 
       - name: Install dependencies
-        run: pnpm approve-builds esbuild && pnpm install
+        run: pnpm install --unsafe-perm
 
       - name: Build
         run: pnpm run build
