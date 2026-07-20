@@ -8,7 +8,7 @@ import Reports from "@/pages/Reports";
 import Budget from "@/pages/Budget";
 import Profile from "@/pages/Profile";
 
-const basename = '/yuyinjizhang';
+const basename = import.meta.env.NODE_ENV === 'production' ? '/yuyinjizhang' : '';
 
 function AppContent() {
   const navigate = useNavigate();
